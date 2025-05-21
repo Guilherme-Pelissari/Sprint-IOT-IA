@@ -16,7 +16,7 @@ def send_post_request(json_data):
 
 def main():
     # Inicializa a captura de vídeo com o índice do DroidCam via USB
-    cap = cv2.VideoCapture(1)  # Substitua "1" pelo índice correto
+    cap = cv2.VideoCapture(0)  # Substitua para "1" caso use o droidcam
     print("Aponte a câmera do celular para um QR Code")
 
     last_read_time = 0
