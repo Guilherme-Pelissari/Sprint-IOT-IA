@@ -110,80 +110,80 @@ Essa abordagem **minimiza custos de infraestrutura** e **maximiza a acessibilida
 
 ---
 
-📷 Leitor de QR Code com Python + Backend Spring Boot
-Este projeto implementa um script Python que utiliza Visão Computacional com OpenCV e pyzbar para capturar e decodificar QR Codes, enviando os dados extraídos (em formato JSON) para um backend desenvolvido em Java com Spring Boot.
-✅ Requisitos
+# 📷 Leitor de QR Code com Envio para Backend Java
 
-Python: 3.8 ou superior
-Pip: Gerenciador de pacotes do Python
-Backend Spring Boot: Rodando localmente em http://localhost:8080/api/movimentacoes
-Câmera: Conectada (ex.: DroidCam via USB, webcam ou câmera do notebook)
+Este script utiliza a webcam (incluindo a do celular via DroidCam) para detectar QR Codes em tempo real, interpretar os dados como JSON e enviá-los para uma API REST em um backend Java.
 
-🛠 Instalação e Execução
-1. Clone o repositório (ou crie um diretório para o script)
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+---
 
-2. (Opcional) Crie um ambiente virtual
+## 🚀 Pré-requisitos
+
+- Python 3.7 ou superior
+- Pip (gerenciador de pacotes do Python)
+- Backend Java rodando em `http://localhost:8080/api/movimentacoes`
+- (Opcional) DroidCam instalado e funcionando se for usar a câmera do celular
+
+---
+
+## 🧰 Instalação
+
+### 1. Clone o repositório ou salve o script:
+
+```bash
+git clone https://github.com/seuusuario/seurepositorio.git
+cd seurepositorio
+``` 
+
+## 2. (Opcional) Crie um ambiente virtual:
+
+```bash
 python -m venv venv
-source venv/bin/activate    # Linux/macOS
-venv\Scripts\activate       # Windows
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+``` 
+## 3. Instale as dependências
 
-3. Instale as dependências
+```bash
 pip install opencv-python pyzbar requests
+```
 
-⚠️ Atenção (Windows)
-No Windows, o pyzbar pode exigir a instalação do ZBar. Use o Chocolatey para instalá-lo:
-choco install zbar
+> ⚠️ **Windows:** pode ser necessário instalar o ZBar manualmente:
+>
+> **Via Chocolatey:**
+>
+> ```bash
+> choco install zbar
+> ```
+>
+> Ou baixe o instalador manualmente:  
+> [https://github.com/NaturalHistoryMuseum/pyzbar#windows](https://github.com/NaturalHistoryMuseum/pyzbar#windows)
 
-🎥 Configuração da Câmera
-O script utiliza a seguinte linha para acessar a câmera:
-cap = cv2.VideoCapture(1)
+---
 
-O número 1 representa o índice da câmera. Caso esteja usando DroidCam ou múltiplas câmeras, altere para 0, 2, etc., conforme necessário.
-▶️ Executando o Script
+## ⚙️ Configuração
 
-Certifique-se de que o backend Spring Boot está rodando localmente na porta 8080.
-Execute o script:
+- Verifique o índice da câmera no trecho `cv2.VideoCapture(0)`.  
+  Pode ser necessário trocar `1` por `0`, `2`, etc. geralmente o `0`se for utilizar a webcam nativa e o `1`se conectar o smartphone via droidcam para usar a camera do celular
 
-python qr_reader.py
+---
 
+## ▶️ Como executar
 
-Aponte a câmera para um QR Code contendo um JSON válido.
-Pressione q para sair.
+```bash
+python nome_do_script.py
+```
+> Substitua `nome_do_script.py` pelo nome do arquivo salvo com o código.
 
-🔄 Como o Script Funciona
+---
 
-Captura de Vídeo: Utiliza OpenCV para capturar vídeo em tempo real.
-Decodificação de QR Codes: Usa pyzbar para decodificar QR Codes.
-Validação de JSON: Verifica se o conteúdo decodificado é um JSON válido.
-Envio ao Backend: Envia os dados ao backend via requests.post.
-Feedback Visual: Exibe retângulos verdes e rótulos na tela para indicar a detecção do QR Code.
+## 🧪 Funcionamento
 
-📦 Exemplo de JSON Esperado no QR Code
-{
-  "id": "abc123",
-  "tipo": "entrada",
-  "timestamp": "2025-05-20T15:45:00"
-}
+- A câmera será ativada e começará a escanear QR Codes.
+- Ao encontrar um QR Code com **JSON válido**, o conteúdo será enviado via **POST** para o backend.
+- Há um intervalo de **3 segundos** entre cada leitura.
+- Pressione `q` para encerrar o programa.
 
-💡 Dicas e Soluções
-🔍 O script não reconhece a câmera?
-
-Tente alterar o índice da câmera: cv2.VideoCapture(0), cv2.VideoCapture(2), etc.
-Verifique se o aplicativo DroidCam está aberto e conectado.
-
-🌐 O backend não responde?
-
-Confirme que o Spring Boot está em execução.
-Verifique se a URL http://localhost:8080/api/movimentacoes está acessível.
-A URL pode ser ajustada na variável BACKEND_URL no script.
-
-🗂 Estrutura do Projeto
-.
-├── qr_reader.py         # Script principal
-├── README.md            # Instruções de uso
-└── requirements.txt     # (Opcional) Dependências
+---
 
 
 
