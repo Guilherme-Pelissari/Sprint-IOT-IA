@@ -110,7 +110,7 @@ Essa abordagem **minimiza custos de infraestrutura** e **maximiza a acessibilida
 
 ---
 
-# 📷 Leitor de QR Code com Envio para Backend Java
+# 📷 Passo a Passo do Leitor de QR Code 
 
 Este script utiliza a webcam (incluindo a do celular via DroidCam) para detectar QR Codes em tempo real, interpretar os dados como JSON e enviá-los para uma API REST em um backend Java.
 
