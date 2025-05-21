@@ -110,6 +110,81 @@ Essa abordagem **minimiza custos de infraestrutura** e **maximiza a acessibilida
 
 ---
 
+📷 Leitor de QR Code com Python + Backend Spring Boot
+Este projeto implementa um script Python que utiliza Visão Computacional com OpenCV e pyzbar para capturar e decodificar QR Codes, enviando os dados extraídos (em formato JSON) para um backend desenvolvido em Java com Spring Boot.
+✅ Requisitos
+
+Python: 3.8 ou superior
+Pip: Gerenciador de pacotes do Python
+Backend Spring Boot: Rodando localmente em http://localhost:8080/api/movimentacoes
+Câmera: Conectada (ex.: DroidCam via USB, webcam ou câmera do notebook)
+
+🛠 Instalação e Execução
+1. Clone o repositório (ou crie um diretório para o script)
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+
+2. (Opcional) Crie um ambiente virtual
+python -m venv venv
+source venv/bin/activate    # Linux/macOS
+venv\Scripts\activate       # Windows
+
+3. Instale as dependências
+pip install opencv-python pyzbar requests
+
+⚠️ Atenção (Windows)
+No Windows, o pyzbar pode exigir a instalação do ZBar. Use o Chocolatey para instalá-lo:
+choco install zbar
+
+🎥 Configuração da Câmera
+O script utiliza a seguinte linha para acessar a câmera:
+cap = cv2.VideoCapture(1)
+
+O número 1 representa o índice da câmera. Caso esteja usando DroidCam ou múltiplas câmeras, altere para 0, 2, etc., conforme necessário.
+▶️ Executando o Script
+
+Certifique-se de que o backend Spring Boot está rodando localmente na porta 8080.
+Execute o script:
+
+python qr_reader.py
+
+
+Aponte a câmera para um QR Code contendo um JSON válido.
+Pressione q para sair.
+
+🔄 Como o Script Funciona
+
+Captura de Vídeo: Utiliza OpenCV para capturar vídeo em tempo real.
+Decodificação de QR Codes: Usa pyzbar para decodificar QR Codes.
+Validação de JSON: Verifica se o conteúdo decodificado é um JSON válido.
+Envio ao Backend: Envia os dados ao backend via requests.post.
+Feedback Visual: Exibe retângulos verdes e rótulos na tela para indicar a detecção do QR Code.
+
+📦 Exemplo de JSON Esperado no QR Code
+{
+  "id": "abc123",
+  "tipo": "entrada",
+  "timestamp": "2025-05-20T15:45:00"
+}
+
+💡 Dicas e Soluções
+🔍 O script não reconhece a câmera?
+
+Tente alterar o índice da câmera: cv2.VideoCapture(0), cv2.VideoCapture(2), etc.
+Verifique se o aplicativo DroidCam está aberto e conectado.
+
+🌐 O backend não responde?
+
+Confirme que o Spring Boot está em execução.
+Verifique se a URL http://localhost:8080/api/movimentacoes está acessível.
+A URL pode ser ajustada na variável BACKEND_URL no script.
+
+🗂 Estrutura do Projeto
+.
+├── qr_reader.py         # Script principal
+├── README.md            # Instruções de uso
+└── requirements.txt     # (Opcional) Dependências
+
 
 
 
