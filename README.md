@@ -121,7 +121,7 @@ Este script utiliza a webcam (incluindo a do celular via DroidCam) para detectar
 - Python 3.7 ou superior
 - Pip (gerenciador de pacotes do Python)
 - Backend Java rodando em `http://localhost:8080/api/movimentacoes`
-- (Opcional) DroidCam instalado e funcionando se for usar a câmera do celular
+- (Opcional) DroidCam instalado e funcionando se for usar a câmera do celular, mas para testar o funcionamento do código apenas a webcam ja é suficiente
 
 ---
 
@@ -184,6 +184,54 @@ python nome_do_script.py
 - Pressione `q` para encerrar o programa.
 
 ---
+
+## 📱 Como usar o DroidCam via USB com Python (OPCIONAL)
+
+Este guia mostra como configurar a câmera do seu celular como webcam no computador usando **DroidCam via USB**, permitindo que ela funcione com o OpenCV para leitura de QR Codes no script Python.
+
+---
+
+### 🔧 Passo a passo para configurar o DroidCam com USB
+
+#### 1. Instale o app no celular
+
+- Acesse a Play Store (Android) ou App Store (iOS) e instale o app **DroidCam**:
+  - [DroidCam para Android](https://play.google.com/store/apps/details?id=com.dev47apps.droidcam)
+  - [DroidCam para iOS](https://apps.apple.com/app/id1510258102)
+
+#### 2. Instale o cliente do DroidCam no PC
+
+- Baixe e instale o **cliente do DroidCam para Windows ou Linux** no site oficial:
+  - [https://www.dev47apps.com/](https://www.dev47apps.com/)
+
+#### 3. Ative a depuração USB no celular
+
+- No Android:
+  - Ative o **Modo de desenvolvedor** (Toque 7x em "Número da versão" nas configurações → Sobre o telefone).
+  - Vá em **Opções de desenvolvedor** e ative **Depuração USB**.
+
+#### 4. Conecte o celular via cabo USB ao computador
+
+- Conecte o celular usando um cabo USB.
+- Confirme a autorização de depuração USB, se solicitado.
+
+#### 5. Execute o cliente DroidCam no computador
+
+- Abra o programa **DroidCam Client**.
+- Escolha a opção **USB**.
+- Clique em **Start**.
+
+> O vídeo da câmera do celular deve aparecer na janela do DroidCam.
+
+---
+
+### 🧪 Verifique o índice da câmera no OpenCV
+
+No seu código Python, altere este trecho se necessário:
+
+```python
+cap = cv2.VideoCapture(1)
+```
 
 
 
