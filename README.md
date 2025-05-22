@@ -234,6 +234,13 @@ No seu código Python, altere este trecho se necessário:
 cap = cv2.VideoCapture(1)
 ```
 
+## Integrantes
+
+- RM555516 - Luigi Berzaghi Hernandes Sespedes
+- RM559093 - Cauã Dos Santos Souza
+- RM558445 - Guilherme Pelissari Feitosa
+
+
 
 
 
