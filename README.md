@@ -120,6 +120,7 @@ Este script utiliza a webcam (incluindo a do celular via DroidCam) para detectar
 
 - Python 3.7 ou superior
 - Pip (gerenciador de pacotes do Python)
+- Link Para o repositório Backend em java: `https://github.com/LuigiBerzaghi/Sprint1Java.git`
 - Backend Java rodando em `http://localhost:8080/api/movimentacoes`
 - (Opcional) DroidCam instalado e funcionando se for usar a câmera do celular, mas para testar o funcionamento do código apenas a webcam ja é suficiente
 
