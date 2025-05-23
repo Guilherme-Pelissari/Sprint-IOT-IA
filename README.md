@@ -126,7 +126,8 @@ Caso queira testar a integração com o backend basta rodar os dois codigos na m
 - (Opcional) DroidCam instalado e funcionando se for usar a câmera do celular, mas para testar o funcionamento do código apenas a webcam ja é suficiente
 
 ---
-
+## QRcode
+- O QRcodeteste.jpeg pode ser usado para testar o código, ele devolve um json ja no formato correto para ser enviado para o backend
 ## 🧰 Instalação
 
 ### 1. Clone o repositório ou salve o script:
