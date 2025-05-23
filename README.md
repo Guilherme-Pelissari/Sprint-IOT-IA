@@ -171,9 +171,8 @@ pip install opencv-python pyzbar requests
 ## ▶️ Como executar
 
 ```bash
-python nome_do_script.py
+python QRreadercam.py
 ```
-> Substitua `nome_do_script.py` pelo nome do arquivo salvo com o código.
 
 ---
 
