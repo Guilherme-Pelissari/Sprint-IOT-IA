@@ -241,7 +241,7 @@ O script `gerador_qrcode.py`:
     "idPonto": 1,
      "dataHora": "2025-05-07T10:00:00"}
 - Codifica esse JSON em um QR Code.
-- Salva o QR Code em formato de imagem (`qrcode4.png`).
+- Salva o QR Code em formato de imagem (`qrcode.png`).
 
 ---
 
