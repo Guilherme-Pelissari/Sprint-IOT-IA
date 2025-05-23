@@ -227,7 +227,7 @@ No seu código Python, altere este trecho se necessário:
 ```python
 cap = cv2.VideoCapture(1)
 ```
-# Gerador de QR Code(OPCIONAL)
+## Gerador de QR Code(OPCIONAL)
 
 Este script gera um QR Code contendo dados de movimentações de motocicletas em formato JSON.
 
