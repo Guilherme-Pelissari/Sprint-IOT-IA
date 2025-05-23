@@ -236,10 +236,10 @@ Este script gera um QR Code contendo dados de movimentações de motocicletas em
 O script `gerador_qrcode.py`:
 
 - Gera um objeto JSON com os dados de movimentação (ID, moto, ponto, data/hora) compatível com o backend no seguinte formato:
-- {"idMoto":
--  "MOTO001",
--   "idPonto": 1,
--    "dataHora": "2025-05-07T10:00:00"}
+  {"idMoto":
+   "MOTO001",
+    "idPonto": 1,
+     "dataHora": "2025-05-07T10:00:00"}
 - Codifica esse JSON em um QR Code.
 - Salva o QR Code em formato de imagem (`qrcode4.png`).
 
