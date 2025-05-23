@@ -131,18 +131,11 @@ Este script utiliza a webcam (incluindo a do celular via DroidCam) para detectar
 ### 1. Clone o repositório ou salve o script:
 
 ```bash
-git clone https://github.com/seuusuario/seurepositorio.git
-cd seurepositorio
+git clone https://github.com/Guilherme-Pelissari/Sprint-IOT-IA.git
+cd Sprint-IOT-IA
 ``` 
 
-## 2. (Opcional) Crie um ambiente virtual:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-``` 
-## 3. Instale as dependências
+## 2. Instale as dependências
 
 ```bash
 pip install opencv-python pyzbar requests
