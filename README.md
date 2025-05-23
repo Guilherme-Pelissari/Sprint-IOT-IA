@@ -132,7 +132,7 @@ Este script utiliza a webcam (incluindo a do celular via DroidCam) para detectar
 
 ```bash
 git clone https://github.com/Guilherme-Pelissari/Sprint-IOT-IA.git
-cd Sprint-IOT-IA
+cd Sprint-IOT-IA/qrcode_reader_cam
 ``` 
 
 ## 2. Instale as dependências
